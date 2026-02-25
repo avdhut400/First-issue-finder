@@ -1,78 +1,74 @@
-<div align="center">
+# First Issue Finder
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,19,24,30,6&height=180&section=header&text=First%20Issue%20Finder&fontSize=48&fontColor=ffffff&fontAlignY=38&desc=Find%20Open%20Source%20Issues%20%C2%B7%20Submit%20PRs%20%C2%B7%20Get%20Merged&descAlignY=58&descSize=16&animation=fadeIn" width="100%"/>
+A modern web application that helps developers discover real open-source issues to contribute to.
 
-<br/>
+Find beginner-friendly issues, submit pull requests, and start contributing to open source effectively.
 
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
-[![GitHub API](https://img.shields.io/badge/GitHub%20API-Live-181717?style=for-the-badge&logo=github&logoColor=white)](https://docs.github.com/en/rest)
-[![License](https://img.shields.io/badge/License-MIT-8b5cf6?style=for-the-badge)](LICENSE)
+---
 
-<br/>
+## 🚀 Overview
 
-> **Find real open source issues. Pick one. Submit a PR. Get merged. 🚀**
+First Issue Finder uses the GitHub REST API to fetch live open issues from public repositories.  
+It allows filtering by programming language, labels, keywords, and sorting preferences.
 
-</div>
+This project is designed to help:
+- Beginners find their first open-source contribution
+- Developers discover active repositories
+- Contributors quickly identify unassigned issues
 
 ---
 
 ## ✨ Features
 
-- 🔍 **Live GitHub API** — Real issues fetched in real-time, no fake data
-- 🌐 **Language Filter** — JavaScript, Python, Java, TypeScript, Go, Rust & more
-- 🏷️ **Label Filter** — good first issue, help wanted, documentation, bug & more
-- 📝 **Topic Search** — Search by keyword like `react`, `cli`, `api`
-- ↕️ **Sort Options** — Newest / Updated / Most Discussed
-- 👤 **Unassigned Filter** — Show only available issues
-- ★ **Save Issues** — Bookmark issues locally with localStorage
-- ⭐ **Star Count** — See how popular the repo is
-- 💬 **Comment Count** — Know how active the issue is
-- 🕐 **Time Ago** — See when the issue was opened
-- 🌌 **Glassmorphism UI** — Dark theme with frosted glass cards & purple glow
+- Live GitHub API integration (real-time issue data)
+- Filter by programming language
+- Filter by labels (good first issue, help wanted, bug, documentation)
+- Keyword-based topic search
+- Sort by newest, recently updated, or most discussed
+- Show only unassigned issues
+- Bookmark issues locally (localStorage)
+- Display repository star count
+- Display issue comment count
+- Relative time display (e.g., "2 hours ago")
+- Modern glassmorphism dark UI
 
 ---
 
 ## 🛠️ Tech Stack
 
-<div align="center">
-
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![GitHub API](https://img.shields.io/badge/GitHub%20API-181717?style=for-the-badge&logo=github&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-
-</div>
+- React 18
+- Vite 5
+- JavaScript (ES6+)
+- GitHub REST API
+- CSS3
 
 ---
 
-## 🚀 Getting Started
+## 📦 Installation
 
 ### Prerequisites
 
-- Node.js `v18+`
+- Node.js v18 or higher
 - npm or yarn
 
-### Installation
+### Setup
 
 ```bash
-# 1. Clone the repo
 git clone https://github.com/avdhut400/first-issue-finder.git
-
-# 2. Go into the project
 cd first-issue-finder
-
-# 3. Install dependencies
 npm install
-
-# 4. Start dev server
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser 🎉
+Application runs at:
 
-### Build for Production
+```
+http://localhost:5173
+```
+
+---
+
+## 🏗️ Production Build
 
 ```bash
 npm run build
@@ -90,57 +86,57 @@ first-issue-finder/
 ├── package.json
 └── src/
     ├── main.jsx
-    ├── App.jsx                    ← Main app, canvas bg, cursor
+    ├── App.jsx
     └── components/
-        ├── SearchBar.jsx          ← Filters: language, label, topic, sort
-        └── IssueCard.jsx          ← Individual issue card with save
+        ├── SearchBar.jsx
+        └── IssueCard.jsx
 ```
 
 ---
 
-## 🔧 How It Works
+## 🔎 How It Works
+
+The application queries GitHub's search API:
 
 ```javascript
-const q = `label:"good first issue" language:javascript state:open no:assignee`
-fetch(`https://api.github.com/search/issues?q=${q}&sort=created&per_page=12`)
+const query = `label:"good first issue" language:javascript state:open no:assignee`
+fetch(`https://api.github.com/search/issues?q=${query}&sort=created&per_page=12`)
 ```
 
-1. Pick your **language** and **label**
-2. Optionally add a **topic** keyword
-3. Hit **Find Issues** — live GitHub results load
-4. Click **View Issue ↗** to open on GitHub
-5. Fork the repo, submit your PR! 🎯
+Results are dynamically rendered in the UI with repository metadata.
 
 ---
 
-## ⚠️ GitHub API Rate Limit
+## ⚠️ GitHub API Rate Limiting
 
-GitHub's public API allows **60 requests/hour** without authentication. If you hit the limit, wait 60 seconds and try again.
+Unauthenticated requests are limited to 60 requests per hour.  
+For higher limits, authentication can be implemented using a GitHub token.
 
 ---
 
 ## 🤝 Contributing
 
-```bash
-git checkout -b feature/your-feature
-git commit -m "feat: add your feature"
-git push origin feature/your-feature
-```
-
-Then open a Pull Request 🎉
+1. Fork the repository
+2. Create a feature branch  
+   `git checkout -b feature/your-feature`
+3. Commit changes  
+   `git commit -m "feat: add new feature"`
+4. Push to your branch  
+   `git push origin feature/your-feature`
+5. Open a Pull Request
 
 ---
 
 ## 📄 License
 
-MIT License — see [LICENSE](LICENSE) for details.
+This project is licensed under the MIT License.
 
 ---
 
-<div align="center">
+## 👤 Author
 
-Built with ❤️ by [Avdhut Magar](https://github.com/avdhut400) · [LinkedIn](https://www.linkedin.com/in/avdhut-magar-94088333b/) · [LeetCode](https://leetcode.com/u/avdhutmagar/)
+Avdhut Magar  
+GitHub: https://github.com/avdhut400  
+LinkedIn: https://www.linkedin.com/in/avdhut-magar-94088333b/
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,19,24,30,6&height=100&section=footer&animation=fadeIn" width="100%"/>
-
-</div>
+---
