@@ -107,6 +107,9 @@ Results are dynamically rendered in the UI with repository metadata.
 
 ---
 
+<img width="1887" height="920" alt="food" src="https://github.com/user-attachments/assets/33327fc3-78e1-494b-b0bc-dd3a8b9ae577" />
+
+
 ## ⚠️ GitHub API Rate Limiting
 
 Unauthenticated requests are limited to 60 requests per hour.  
