@@ -146,22 +146,22 @@ const styles = {
   justifyContent: "center",
   alignItems: "center",
   fontSize: "14px",
-  color: "#8b5cf6",            // main text color
+  color: "#8b5cf6",            
   textDecoration: "none",
   marginBottom: "24px",
   cursor: "pointer",
-  transition: "all 0.3s ease",  // smooth transition
+  transition: "all 0.3s ease",  
   padding: "4px 8px",
   borderRadius: "8px",
-  backgroundColor: "rgba(139,92,246,0.1)", // subtle purple glass
-  boxShadow: "0 4px 15px rgba(139,92,246,0.2)", // soft glow
+  backgroundColor: "rgba(139,92,246,0.1)", 
+  boxShadow: "0 4px 15px rgba(139,92,246,0.2)",
 },
 
 authorHover: {
-  transform: "translateY(-2px) scale(1.05)", // hover pop effect
-  backgroundColor: "rgba(139,92,246,0.2)",   // stronger hover glow
+  transform: "translateY(-2px) scale(1.05)", 
+  backgroundColor: "rgba(139,92,246,0.2)",   
   boxShadow: "0 6px 20px rgba(139,92,246,0.35)",
-  color: "#ffffff",                         // highlight username
+  color: "#ffffff",                        
 },
   subtitle: {
     textAlign: "center",
